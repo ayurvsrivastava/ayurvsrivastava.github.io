@@ -28,6 +28,14 @@ function calculateGrade() {
 			alert("Weight and Grade Values Cannot be Negative");
 			return;
 		}
+		if (document.getElementById("weight" + i).value >= 0 && document.getElementById("grade" + i).value == "") {
+			alert("Please FIll in All Corresponding Fields");
+			return;
+		}
+		if (document.getElementById("grade" + i).value >= 0 && document.getElementById("weight" + i).value == "") {
+			alert("Please FIll in All Corresponding Fields");
+			return;
+		}
 		weightScore += document.getElementById("grade"+i).value*document.getElementById("weight"+i).value;
 		totalWeight = count;
 		totalGrade = weightScore/totalWeight;
