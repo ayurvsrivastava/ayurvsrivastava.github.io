@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Total Grade Calculator</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Total Grade Calculator</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="totalgrade.html" class="active">Total Grade Calculator</a></li>
+						<li><a href="final.html">Final Grade Calculator</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Total Grade Calculator</h1>
+							<form id="calculator">
+								<table id="datatable">
+									<tbody>
+										<tr>
+											<td>#</td>
+											<td>Grade as Percent</td>
+											<td>Category Weight as Percent</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td><input class="gradeinput" type="number" name="classgrade" min="0" id="grade1"></td>
+											<td><input class="gradeinput" type="number" name="classweight" min="0" id="weight1"></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td><input class="gradeinput" type="number" name="classgrade" min="0" id="grade2"></td>
+											<td><input class="gradeinput" type="number" name="classweight" min="0" id="weight2"></td>
+										</tr>
+					
+											<td>3</td>
+											<td><input class="gradeinput" type="number" name="classgrade" min="0" id="grade3"></td>
+											<td><input class="gradeinput" type="number" name="classweight" min="0" id="weight3"></td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td><input class="gradeinput" type="number" name="classgrade" min="0" id="grade4"></td>
+											<td><input class="gradeinput" type="number" name="classweight" min="0" id="weight4"></td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td><input class="gradeinput" type="number" name="classgrade" min="0" id="grade5"></td>
+											<td><input class="gradeinput" type="number" name="classweight" min="0" id="weight5"></td>
+										</tr>
+									</tbody>
+								</table>
+							<button type="button" onClick="createRow()" class="inc">Add Section</button>
+							<button type="button" onClick="deleteRow()" class="dec">Delete Section</button>
+							<button type="button" onClick="resetTable()" class="dec">Reset</button>
+							<p><button type="button" onClick="calculateGrade()" class="calc">Calculate Grade</button></p>
+							</form>
+							<h2>Final Grade</h2>
+							<h3 id = "result"></h3>
+						</div>
+					</section>
+					<style>
+						.gradeinput {
+						background: rgba(255,255,255,.6);
+						color: black;
+						}
+						.dec {
+							margin-left: 50px;
+						}
+						.calc {
+							margin-top: 20px;
+							
+						}
+						input[name="demo-priority"]{
+							margin-top: -20px;
+						}
+					</style>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/resetTable.js"></script>
+			<script src="assets/js/calculateGrade.js"></script>
+			<script src="assets/js/deleteRow.js"></script>
+			<script src="assets/js/createRow.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/createRow.js"></script>
+	</body>
+</html>
