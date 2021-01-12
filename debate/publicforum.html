@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+        body{
+            background-color: teal;
+        }
+        h1{
+            text-align: center;
+            color: white;
+        }
+        div{
+            font-size: 60px;
+            text-align: center;
+            font-family: "Verdana";
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            font-family: "Verdana";
+            align-items: center;
+        }
+        .clear{
+            background-color: red; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .clear:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
+        }
+        .buttons{
+            align-content: center;
+        }
+        .text{
+            padding: 25px 0px;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
+        }
+        
+		
+		
+		
+    </style>
+	
+</head>
+<body>
+	
+<h1>Public Forum!</h1>
+<div id="buttons">
+<button class="button" onclick="constructive()">Team One Constructive</button>
+<button class="button" onclick="constructive()">Team Two Constructive</button>
+<button class="button" onclick="crossfire()">Cross Fire</button>
+<button class="button" onclick="constructive()">Team One Rebuttal</button>
+<button class="button" onclick="constructive()">Team Two Rebuttal</button>
+<button class="button" onclick="crossfire()">Cross Fire</button>
+<button class="button" onclick="crossfire()">Team One Summary</button>
+<button class="button" onclick="crossfire()">Team Two Summary</button>
+<button class="button" onclick="crossfire()"> Grand Cross Fire</button>
+<button class="button" onclick="summary()">Team One Final Focus</button>
+<button class="button" onclick="summary()">Team Two Final Focus</button>
+</div>
+    <div id="clockdiv" class="text"></div>
+<div id="buttons">
+<button class="clear" class="button" onclick=location=URL>Clear Current Timer</button>
+<button class="clear" class="button" onclick="replace()">Return Home</button>
+</div>
+
+<script>
+function constructive() {
+var time_in_minutes = 4;
+var current_time = Date.parse(new Date());
+var deadline = new Date(current_time + time_in_minutes*60*1000);
+
+
+function time_remaining(endtime){
+	var t = Date.parse(endtime) - Date.parse(new Date());
+	var seconds = Math.floor( (t/1000) % 60 );
+	var minutes = Math.floor( (t/1000/60) % 60 );
+	var hours = Math.floor( (t/(1000*60*60)) % 24 );
+	var days = Math.floor( t/(1000*60*60*24) );
+	return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
+}
+function run_clock(id,endtime){
+	var clock = document.getElementById(id);
+	function update_clock(){
+		var t = time_remaining(endtime);
+        if (t.seconds < 10){
+           clock.innerHTML = 'Time Left is '+t.minutes+':'+ '0' +t.seconds; 
+        } else {
+		clock.innerHTML = 'Time Left is '+t.minutes+':'+t.seconds;
+        }
+		if(t.total<=0){ clearInterval(timeinterval); }
+	}
+	update_clock(); // run function once at first to avoid delay
+	var timeinterval = setInterval(update_clock,1000);
+}
+run_clock('clockdiv',deadline);
+}
+    
+function crossfire() {
+
+var time_in_minutes = 3;
+var current_time = Date.parse(new Date());
+var deadline = new Date(current_time + time_in_minutes*60*1000);
+
+
+function time_remaining(endtime){
+	var t = Date.parse(endtime) - Date.parse(new Date());
+	var seconds = Math.floor( (t/1000) % 60 );
+	var minutes = Math.floor( (t/1000/60) % 60 );
+	var hours = Math.floor( (t/(1000*60*60)) % 24 );
+	var days = Math.floor( t/(1000*60*60*24) );
+	return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
+}
+function run_clock(id,endtime){
+	var clock = document.getElementById(id);
+	function update_clock(){
+		var t = time_remaining(endtime);
+		if (t.seconds < 10){
+           clock.innerHTML = 'Time Left is '+t.minutes+':'+ '0' +t.seconds; 
+        } else {
+		clock.innerHTML = 'Time Left is '+t.minutes+':'+t.seconds;
+        }
+		if(t.total<=0){ clearInterval(timeinterval); }
+	}
+	update_clock(); // run function once at first to avoid delay
+	var timeinterval = setInterval(update_clock,1000);
+}
+run_clock('clockdiv',deadline);
+}
+    
+function summary() {
+
+var time_in_minutes = 2;
+var current_time = Date.parse(new Date());
+var deadline = new Date(current_time + time_in_minutes*60*1000);
+
+
+function time_remaining(endtime){
+	var t = Date.parse(endtime) - Date.parse(new Date());
+	var seconds = Math.floor( (t/1000) % 60 );
+	var minutes = Math.floor( (t/1000/60) % 60 );
+	var hours = Math.floor( (t/(1000*60*60)) % 24 );
+	var days = Math.floor( t/(1000*60*60*24) );
+	return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
+}
+function run_clock(id,endtime){
+	var clock = document.getElementById(id);
+	function update_clock(){
+		var t = time_remaining(endtime);
+		if (t.seconds < 10){
+           clock.innerHTML = 'Time Left is '+t.minutes+':'+ '0' +t.seconds; 
+        } else {
+		clock.innerHTML = 'Time Left is '+t.minutes+':'+t.seconds;
+        }
+		if(t.total<=0){ clearInterval(timeinterval); }
+	}
+	update_clock(); // run function once at first to avoid delay
+	var timeinterval = setInterval(update_clock,1000);
+}
+run_clock('clockdiv',deadline);
+}
+
+function replace(){
+    location.replace("debate.html");  
+}
+    
+</script>
+
+</body>
+</html>
